@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>City Convention Scheduling</title>
+  <meta name="author" content="Team 13" />
+<meta
+  name="description"
+  content="This site, well it does some stuff" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="portal.html">City Convention Scheduling</a></div>
+        <ul class="nav-links">
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <div class="menu">
+            <li class="dropdown"><a href="portal.html">Home</a></li>
+            <li class="dropdown"><a href="rooms.html">View Rooms</a></li>
+            <li class="dropdown"><a href="upcomingEvents.html">Upcoming Events</a></li>
+            <li class="dropdown"><a href="myEvents.html">My Events</a></li>
+            <li class="dropdown"><a href="profile.html">My Profile</a></li>
+            <li class="dropdown"><a href="../index.html">Log Out</a></li>
+          </div>
+        </ul>
+      </nav>
+  <h1>Confirm Reservation</h1>
+  <form>
+    <p>Event: Joker Stoning</p>
+    <p>Bookee: Mitch Daniels</p>
+    <p>Organization: Purdue</p>
+    <p>Venue: Convention Center</p>
+    <p>Room: Bat Cave</p>
+    <p>Date: 3/1/25</p>
+    <p>Time: 4pm-6pm (2 hrs)</p>
+    <p>Expected Attendance: 100</p>
+    <h2>Payment</h2>
+    <label for="card type">Card:</label>
+    <select id="card type" name="card type">
+      <option value="blank"></option>
+      <option value="visa">Visa</option>
+      <option value="mastercard">Mastercard</option>
+      <option value="discover">Discover</option>
+    </select>
+    <br>
+    <br>
+    <label for="text">Name of Cardholder:</label>
+    <input type="text" id="text" name="text">
+    <br>
+    <br>
+    <label for="text">Card Number:</label>
+    <input type="text" id="cardnum" name="text">
+    <br>
+    <br>
+    <label for="text">Security Code:</label>
+    <input type="text" id="text" name="text">
+    <br>
+    <br>
+    <p>Total: $300.00</p>
+    <input type ="button" value = "Edit Reservation" onclick="location.href='bookRoom.html';">
+    <input type ="button" value = "Book Event" onclick="validatePayment();"/>
+    <script>
+      function validatePayment() {
+          let startTime = document.getElementById("cardnum").value;
+          
+          if (startTime === "1111-2222-3333-4444") {
+              alert("Error: Payment information could not be validated.");
+          } else {
+              location.href = 'receipt.html';
+          }
+      }
+    </script>
+  </form>
+</body>
+</html>

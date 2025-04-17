@@ -32,7 +32,17 @@
     <option value="month">Month</option>
     <option value="year">Year</option>
     <option value="all time">All Time</option>
-  </select>:  <input type ="button" value = "Generate" onclick="location.href='rooms.html';">
+  </select>:  <input type ="button" value = "Generate" onclick="goToPage()">
 </p>
+<script>
+  function goToPage() {
+    const selection = document.getElementById("reportType").value;
+    if (selection === "customers") {
+      window.location.href = "customerReport.html"; 
+    } else if (selection === "rooms") {
+      window.location.href = "roomReport.html"; 
+    }
+  }
+</script>
 </body>
 </html>
